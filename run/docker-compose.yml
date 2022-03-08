@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  smayb:
+    image: 'smayb:latest'
+    build:
+      context: .
+    container_name: smayb
+    ports:
+      - "8080:8080"
+    depends_on:
+      - smayb_db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://smayb_db:5434/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=supersecret
+
+  smayb_db:
+    image: 'postgres:13.1-alpine'
+    container_name: smayb_db
+    ports:
+      - "5434:5434"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=supersecret
+    command: -p 5434

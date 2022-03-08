@@ -1,0 +1,25 @@
+type Query {
+    history(historyRequest: HistoryRequest!): [HistoryResponse]
+}
+
+type Mutation {
+    transfer(transferRequest: TransferRequest!): Boolean
+}
+
+type HistoryResponse {
+    datetime: DateTime
+    amount: BigDecimal
+}
+
+input HistoryRequest {
+    startDatetime: DateTime
+    endDatetime: DateTime
+}
+
+input TransferRequest {
+    datetime: DateTime
+    amount: BigDecimal
+}
+
+scalar DateTime
+scalar BigDecimal
