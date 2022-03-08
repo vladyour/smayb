@@ -1,7 +1,7 @@
 # Hello my BTC friends!
 
 I've created an app **SMAY-B** so that you can send me bitcoins and check my account. Guess what is it short for... 😏<br/>
-Everything you have to do is to run `cd run && ./run`.<br/>
+Everything you have to do is to run `./run/run.sh`.<br/>
 Make sure you have docker and docker-compose installed.<br/>
 Once it's launched you can send graphQL queries.
 
